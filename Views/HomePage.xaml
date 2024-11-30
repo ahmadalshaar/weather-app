@@ -24,7 +24,6 @@
                 <RoundRectangle CornerRadius="5" />
             </Border.StrokeShape>
             <Grid Margin="10">
-                <!-- Background Image -->
                 <Border Background="Transparent" 
                         StrokeThickness="0">
                     <Border.StrokeShape>
@@ -38,8 +37,6 @@
                         HorizontalOptions="FillAndExpand" 
                         VerticalOptions="FillAndExpand" />
                 </Border>
-
-                <!-- Main Content Grid -->
                 <Grid HeightRequest="200" 
                       HorizontalOptions="FillAndExpand" 
                       VerticalOptions="FillAndExpand" 
@@ -89,19 +86,18 @@
             </Grid>
         </Border>
 
-       
+        <ScrollView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Border Background="#16161F"                   
-                Margin="0,10,0,0" 
-                StrokeThickness="0"
-                Padding="0">
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="5" />
-            </Border.StrokeShape>
-            <ScrollView>
+                    Margin="0,10,0,0" 
+                    StrokeThickness="0"
+                    Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5" />
+                </Border.StrokeShape>
                 <VerticalStackLayout>
                     <Grid HorizontalOptions="FillAndExpand" 
-      VerticalOptions="FillAndExpand" 
-      Margin="0,20,0,20">
+                              VerticalOptions="FillAndExpand" 
+                              Margin="0,20,0,20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
@@ -112,34 +108,36 @@
                         </Grid.ColumnDefinitions>
 
                         <Image Grid.Row="0"  
-           Grid.Column="0" 
-           Source="thermometer_simple_light.png"                    
-           Aspect="Center" 
-           IsVisible="True"                             
-           HorizontalOptions="StartAndExpand" 
-           VerticalOptions="CenterAndExpand"
-           Opacity="0.5"
-           Margin="5,0,0,0" />
+                                   Grid.Column="0" 
+                                   Source="thermometer_simple_light.png"                    
+                                   Aspect="Center" 
+                                   IsVisible="True"                             
+                                   HorizontalOptions="StartAndExpand" 
+                                   VerticalOptions="CenterAndExpand"
+                                   Opacity="0.5"
+                                   Margin="5,0,0,0" />
                         <Label Grid.Row="0"  
-           Grid.Column="1"  
-                               VerticalOptions="CenterAndExpand"
-                               Opacity="0.8"
-           Text="Feels like" />
+                                    Grid.Column="1"  
+                                    VerticalOptions="CenterAndExpand"
+                                    Opacity="0.8"
+                                    Text="Feels like">
+
+                        </Label>
                         <Label Margin="0,0,15,0" 
-           Grid.Row="0"  
-           Grid.Column="2"  
-                               VerticalOptions="CenterAndExpand"
-           Text="{Binding Feelslike}" 
-           HorizontalOptions="EndAndExpand" />
+                                   Grid.Row="0"  
+                                   Grid.Column="2"  
+                                   VerticalOptions="CenterAndExpand"
+                                   Text="{Binding Feelslike}" 
+                                   HorizontalOptions="EndAndExpand" />
                     </Grid>
                     <Border BackgroundColor="#3b3b54" 
-        StrokeThickness="0.5" 
-        Margin="15,0,10,5" 
-        Opacity="0.5"/>
+                                StrokeThickness="0.5" 
+                                Margin="15,0,10,5" 
+                                Opacity="0.5"/>
 
                     <Grid HorizontalOptions="FillAndExpand" 
-      VerticalOptions="FillAndExpand" 
-      Margin="0,20,0,20">
+                              VerticalOptions="FillAndExpand" 
+                              Margin="0,20,0,20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
@@ -150,34 +148,34 @@
                         </Grid.ColumnDefinitions>
 
                         <Image Grid.Row="0"  
-           Grid.Column="0" 
-           Source="cloud_rain_light.png"                    
-           Aspect="Center" 
-           IsVisible="True"                             
-           HorizontalOptions="StartAndExpand" 
-          VerticalOptions="CenterAndExpand"
-           Opacity="0.5"
-           Margin="5,0,0,0" />
+                                   Grid.Column="0" 
+                                   Source="cloud_rain_light.png"                    
+                                   Aspect="Center" 
+                                   IsVisible="True"                             
+                                   HorizontalOptions="StartAndExpand" 
+                                   VerticalOptions="CenterAndExpand"
+                                   Opacity="0.5"
+                                   Margin="5,0,0,0" />
                         <Label Grid.Row="0"
-           Opacity="0.8"
-           Grid.Column="1"
-                               VerticalOptions="CenterAndExpand"
-           Text="Precipitation" />
+                                   Opacity="0.8"
+                                   Grid.Column="1"
+                                   VerticalOptions="CenterAndExpand"
+                                   Text="Precipitation" />
                         <Label Margin="0,0,15,0" 
-           Grid.Row="0"  
-           Grid.Column="2"  
-           Text="{Binding Precipitation}" 
-                               VerticalOptions="CenterAndExpand"
-           HorizontalOptions="EndAndExpand" />
+                                   Grid.Row="0"  
+                                   Grid.Column="2"  
+                                   Text="{Binding Precipitation}" 
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="EndAndExpand" />
                     </Grid>
                     <Border BackgroundColor="#3b3b54" 
-        StrokeThickness="0.5" 
-        Margin="15,0,10,5" 
-        Opacity="0.5"/>
+                                StrokeThickness="0.5" 
+                                Margin="15,0,10,5" 
+                                Opacity="0.5"/>
 
                     <Grid HorizontalOptions="FillAndExpand" 
-      VerticalOptions="FillAndExpand" 
-      Margin="0,20,0,20">
+                              VerticalOptions="FillAndExpand" 
+                              Margin="0,20,0,20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
@@ -188,35 +186,34 @@
                         </Grid.ColumnDefinitions>
 
                         <Image Grid.Row="0"  
-           Grid.Column="0" 
-           Source="wind_light.png"                    
-           Aspect="Center" 
-           IsVisible="True"                             
-           HorizontalOptions="StartAndExpand" 
-           VerticalOptions="CenterAndExpand"
-           Opacity="0.5"
-           Margin="5,0,0,0" />
+                                   Grid.Column="0" 
+                                   Source="wind_light.png"                    
+                                   Aspect="Center" 
+                                   IsVisible="True"                             
+                                   HorizontalOptions="StartAndExpand" 
+                                   VerticalOptions="CenterAndExpand"
+                                   Opacity="0.5"
+                                   Margin="5,0,0,0" />
                         <Label Grid.Row="0"  
-           Grid.Column="1"  
-                               Opacity="0.8"
-                                VerticalTextAlignment="Center"
-           Text="Wind" />
+                                   Grid.Column="1"  
+                                   Opacity="0.8"
+                                   VerticalTextAlignment="Center"
+                                   Text="Wind" />
                         <Label Margin="0,0,15,0" 
-                               
-           Grid.Row="0"  
-           Grid.Column="2"  
-           Text="{Binding Wind}" 
-                               VerticalOptions="CenterAndExpand"
-           HorizontalOptions="EndAndExpand" />
+                                   Grid.Row="0"  
+                                   Grid.Column="2"  
+                                   Text="{Binding Wind}" 
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="EndAndExpand" />
                     </Grid>
                     <Border BackgroundColor="#3b3b54" 
-        StrokeThickness="0.5" 
-        Margin="15,0,10,5" 
-        Opacity="0.5"/>
+                                StrokeThickness="0.5" 
+                                Margin="15,0,10,5" 
+                                Opacity="0.5"/>
 
                     <Grid HorizontalOptions="FillAndExpand" 
-      VerticalOptions="FillAndExpand" 
-      Margin="0,20,0,20">
+                              VerticalOptions="FillAndExpand" 
+                              Margin="0,20,0,20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
@@ -227,33 +224,34 @@
                         </Grid.ColumnDefinitions>
 
                         <Image Grid.Row="0"  
-           Grid.Column="0" 
-           Source="drop_light.png"                    
-           Aspect="Center" 
-           IsVisible="True"                             
-           HorizontalOptions="StartAndExpand" 
-           VerticalOptions="CenterAndExpand"
-           Opacity="0.5"
-           Margin="5,0,0,0" />
+                                   Grid.Column="0" 
+                                   Source="drop_light.png"                    
+                                   Aspect="Center" 
+                                   IsVisible="True"                             
+                                   HorizontalOptions="StartAndExpand" 
+                                   VerticalOptions="CenterAndExpand"
+                                   Opacity="0.5"
+                                   Margin="5,0,0,0" />
                         <Label Grid.Row="0"  
-           Grid.Column="1"  
-                               Opacity="0.8"
-                               VerticalOptions="CenterAndExpand"
-           Text="Humidity" />
+                                   Grid.Column="1"  
+                                   Opacity="0.8"
+                                   VerticalOptions="CenterAndExpand"
+                                   Text="Humidity" />
                         <Label Margin="0,0,15,0" 
-           Grid.Row="0"  
-           Grid.Column="2"  
-           Text="{Binding Humidity}" 
-           HorizontalOptions="EndAndExpand" 
-                               VerticalOptions="CenterAndExpand"/>
+                                   Grid.Row="0"  
+                                   Grid.Column="2"  
+                                   Text="{Binding Humidity}" 
+                                   HorizontalOptions="EndAndExpand" 
+                                   VerticalOptions="CenterAndExpand"/>
                     </Grid>
                     <Border BackgroundColor="#3b3b54" 
-        StrokeThickness="0.5" 
-        Margin="15,0,10,5" 
-        Opacity="0.5"/>
+                                StrokeThickness="0.5" 
+                                Margin="15,0,10,5" 
+                                Opacity="0.5"/>
+
                     <Grid HorizontalOptions="FillAndExpand" 
-      VerticalOptions="FillAndExpand" 
-      Margin="0,20,0,20">
+                              VerticalOptions="FillAndExpand" 
+                              Margin="0,20,0,20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
@@ -264,37 +262,40 @@
                         </Grid.ColumnDefinitions>
 
                         <Image Grid.Row="0"  
-            Grid.Column="0" 
-            Source="sun_dim_light.png"                    
-            Aspect="Center" 
-            IsVisible="True"                             
-            HorizontalOptions="StartAndExpand" 
-           VerticalOptions="CenterAndExpand"
-            Opacity="0.5"
-            Margin="5,0,0,0" />
-                        <Label  Grid.Row="0"  
-            Grid.Column="1"  
-                                VerticalTextAlignment="Center"
-                                Opacity="0.8"
-                                VerticalOptions="CenterAndExpand"
-            Text="Uv Index" />
-                        <Label  Margin="0,0,15,0" 
-            Grid.Row="0"  
-            Grid.Column="2"  
-            Text="{Binding UvIndex}" 
-            HorizontalOptions="EndAndExpand" 
-                                VerticalOptions="CenterAndExpand"/>
+                                   Grid.Column="0" 
+                                   Source="sun_dim_light.png"                    
+                                   Aspect="Center" 
+                                   IsVisible="True"                             
+                                   HorizontalOptions="StartAndExpand" 
+                                   VerticalOptions="CenterAndExpand"
+                                   Opacity="0.5"
+                                   Margin="5,0,0,0" />
+                        <Label Grid.Row="0"  
+                                   Grid.Column="1"  
+                                   VerticalTextAlignment="Center"
+                                   Opacity="0.8"
+                                   VerticalOptions="CenterAndExpand"
+                                   Text="UV Index" />
+                        <Label Margin="0,0,15,0" 
+                                   Grid.Row="0"  
+                                   Grid.Column="2"  
+                                   Text="{Binding UvIndex}" 
+                                   HorizontalOptions="EndAndExpand" 
+                                   VerticalOptions="CenterAndExpand"/>
                     </Grid>
                     <Border BackgroundColor="#3b3b54" 
-        StrokeThickness="0.5" 
-        Margin="15,0,10,5" 
-        Opacity="0.5"/>
-
+                                StrokeThickness="0.5" 
+                                Margin="15,0,10,5" 
+                                Opacity="0.5"/>
                 </VerticalStackLayout>
-             </ScrollView>
-        </Border>
+            </Border>
+        </ScrollView>
+
         <Button 
-            VerticalOptions="EndAndExpand" IsEnabled="{Binding ConnectionStatus}" Text="5-day weather forecast"  Margin="0,10,0,0"
-               Command="{Binding BindingContext.DailyForecast5DaysCommand, Source={x:Reference homePage}}"></Button>
+            VerticalOptions="EndAndExpand" 
+            IsEnabled="{Binding ConnectionStatus}" 
+            Text="5-day weather forecast"  
+            Margin="0,10,0,0"
+            Command="{Binding BindingContext.DailyForecast5DaysCommand, Source={x:Reference homePage}}" />
     </VerticalStackLayout>
 </ContentPage>
