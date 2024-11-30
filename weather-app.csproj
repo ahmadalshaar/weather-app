@@ -60,6 +60,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\Background\clear_day.png" />
+	  <None Remove="Resources\Images\Background\clear_night.png" />
+	  <None Remove="Resources\Images\Background\cloudy_day.png" />
+	  <None Remove="Resources\Images\Background\cloudy_night.png" />
+	  <None Remove="Resources\Images\Background\fewclouds_day.png" />
+	  <None Remove="Resources\Images\Background\fewclouds_night.png" />
+	  <None Remove="Resources\Images\Background\rain_day.png" />
+	  <None Remove="Resources\Images\Background\rain_night.png" />
+	  <None Remove="Resources\Images\Background\storm_day.png" />
+	  <None Remove="Resources\Images\Background\storm_night.png" />
 	  <None Remove="Resources\Images\Icons\cloud_rain_light.png" />
 	  <None Remove="Resources\Images\Icons\drop_light.png" />
 	  <None Remove="Resources\Images\Icons\sun_dim_light.png" />
@@ -69,24 +79,21 @@
 
 	<ItemGroup>
 	  <MauiImage Include="Resources\Images\Background\clear_day.png" />
+	  <MauiImage Include="Resources\Images\Background\clear_night.png" />
+	  <MauiImage Include="Resources\Images\Background\cloudy_day.png" />
+	  <MauiImage Include="Resources\Images\Background\cloudy_night.png" />
+	  <MauiImage Include="Resources\Images\Background\fewclouds_day.png" />
+	  <MauiImage Include="Resources\Images\Background\fewclouds_night.png" />
+	  <MauiImage Include="Resources\Images\Background\rain_day.png" />
+	  <MauiImage Include="Resources\Images\Background\rain_night.png" />
+	  <MauiImage Include="Resources\Images\Background\storm_day.png" />
+	  <MauiImage Include="Resources\Images\Background\storm_night.png" />
 	  <MauiImage Include="Resources\Images\Icons\cloud_rain_light.png" />
 	  <MauiImage Include="Resources\Images\Icons\drop_light.png" />
 	  <MauiImage Include="Resources\Images\Icons\storm_day_icon.png" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiImage Include="Resources\Images\Background\clear_night.png" />
-	  <MauiImage Include="Resources\Images\Background\cloudy_day.png" />
-	  <MauiImage Include="Resources\Images\Background\few_clouds_day.png" />
-	  <MauiImage Include="Resources\Images\Background\few_clouds_night.png" />
-	  <MauiImage Include="Resources\Images\Background\rain_day.png" />
-	  <MauiImage Include="Resources\Images\Background\rain_night.png" />
-	  <MauiImage Include="Resources\Images\Background\storm_day.png" />
-	  <MauiImage Include="Resources\Images\Background\storm_night.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiImage Include="Resources\Images\Background\cloudy_night.png" />
 	  <MauiImage Include="Resources\Images\Icons\clear_day_icon.png" />
 	  <MauiImage Include="Resources\Images\Icons\clear_night_icon.png" />
 	  <MauiImage Include="Resources\Images\Icons\cloudy_day_icon.png" />
@@ -102,12 +109,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\DailyForecastPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

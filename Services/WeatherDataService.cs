@@ -12,19 +12,29 @@ namespace weather_app.Services
 {
     public class WeatherDataService:IWeatherDataService
     {      
-        private string GetRequestUri()
+        private string GetBaseRequestUri(string type)
         {
-           return $"{ApiConstants.BaseUrl}?key={ApiConstants.ApiKey}&q=Cairo";            
+           return $"{ApiConstants.BaseUrl}{type}.json?key={ApiConstants.ApiKey}";            
         }
 
-        public async Task<WeatherInfo> GetWeatherDataAsync()
+        public async Task<WeatherInfo> GetWeatherDataAsync(string query)
         {
             using (var httpClient = new HttpClient())
             {                   
-                var response = await httpClient.GetStringAsync(GetRequestUri());
+                var response = await httpClient.GetStringAsync($"{GetBaseRequestUri("current")}&q={query}");
                 var weatherData = JsonSerializer.Deserialize<WeatherInfo>(response);
                 return weatherData;
             }
-        }        
+        }
+
+        public async Task<WeatherInfo> GetWeatherForecastDataAsync(string location, int numberOfDayes)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetStringAsync($"{GetBaseRequestUri("forecast")}&q={location}&days={numberOfDayes}");
+                var weatherData = JsonSerializer.Deserialize<WeatherInfo>(response);
+                return weatherData;
+            }
+        }
     }
 }

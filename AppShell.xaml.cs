@@ -8,6 +8,7 @@ namespace weather_app
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+            Routing.RegisterRoute(nameof(DailyForecastPage), typeof(DailyForecastPage));
         }
     }
 }

@@ -2,13 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="weather_app.Views.HomePage"
+             x:Name="homePage"
              Title="HomePage"
              Shell.NavBarIsVisible="False"             
              Background="#13131A">
 
-    <VerticalStackLayout Margin="10">
-        <SearchBar 
+    <VerticalStackLayout Margin="10" Spacing="5">
+        <SearchBar            
             x:Name="searchBar"
+            IsEnabled="{Binding ConnectionStatus}"
             Placeholder="Search for weather..." 
             SearchCommand="{Binding PerformSearch}" 
             SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}" />
@@ -29,8 +31,8 @@
                         <RoundRectangle CornerRadius="5" />
                     </Border.StrokeShape>
                     <Image 
-                        Source="clear_night.png" 
-                        HeightRequest="300"
+                        Source="{Binding WeatherBackgroundImage}" 
+                        HeightRequest="200"
                         Aspect="Fill" 
                         IsVisible="True" 
                         HorizontalOptions="FillAndExpand" 
@@ -38,7 +40,7 @@
                 </Border>
 
                 <!-- Main Content Grid -->
-                <Grid HeightRequest="300" 
+                <Grid HeightRequest="200" 
                       HorizontalOptions="FillAndExpand" 
                       VerticalOptions="FillAndExpand" 
                       Margin="0">
@@ -66,19 +68,21 @@
                     <VerticalStackLayout Grid.Row="1" 
                                          Grid.Column="0" 
                                          Grid.ColumnSpan="3" 
-                                         Margin="20" 
+                                         Margin="20,0,0,0" 
+                                         Spacing="5"
                                          HorizontalOptions="FillAndExpand" 
-                                         VerticalOptions="FillAndExpand">
-                        <Label Text="{Binding Temperature}" FontSize="Header" FontAttributes="Bold" />
-                        <Label Text="{Binding Condition}" />
+                                         VerticalOptions="CenterAndExpand">
+                        <Label Text="{Binding Temperature}" FontSize="Title" FontAttributes="Bold" />
+                        <Label Margin="5,0,0,0" Text="{Binding Condition}" />
                     </VerticalStackLayout>
 
-                    <Image Grid.Row="0" 
+                    <Image Grid.Row="1" 
                            Grid.RowSpan="2" 
                            Grid.Column="2" 
                            Source="{Binding WeatherImage}"                    
                            Aspect="Center" 
-                           IsVisible="True"                             
+                           IsVisible="True" 
+                           Margin="0,0,20,0"
                            HorizontalOptions="EndAndExpand" 
                            VerticalOptions="EndAndExpand" />
                 </Grid>
@@ -103,7 +107,7 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="64" />
-                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
@@ -113,16 +117,18 @@
            Aspect="Center" 
            IsVisible="True"                             
            HorizontalOptions="StartAndExpand" 
-           VerticalOptions="EndAndExpand"
+           VerticalOptions="CenterAndExpand"
            Opacity="0.5"
            Margin="5,0,0,0" />
                         <Label Grid.Row="0"  
            Grid.Column="1"  
+                               VerticalOptions="CenterAndExpand"
                                Opacity="0.8"
            Text="Feels like" />
                         <Label Margin="0,0,15,0" 
            Grid.Row="0"  
            Grid.Column="2"  
+                               VerticalOptions="CenterAndExpand"
            Text="{Binding Feelslike}" 
            HorizontalOptions="EndAndExpand" />
                     </Grid>
@@ -139,7 +145,7 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="64" />
-                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
@@ -149,17 +155,19 @@
            Aspect="Center" 
            IsVisible="True"                             
            HorizontalOptions="StartAndExpand" 
-           VerticalOptions="EndAndExpand"
+          VerticalOptions="CenterAndExpand"
            Opacity="0.5"
            Margin="5,0,0,0" />
                         <Label Grid.Row="0"
            Opacity="0.8"
-           Grid.Column="1"  
+           Grid.Column="1"
+                               VerticalOptions="CenterAndExpand"
            Text="Precipitation" />
                         <Label Margin="0,0,15,0" 
            Grid.Row="0"  
            Grid.Column="2"  
            Text="{Binding Precipitation}" 
+                               VerticalOptions="CenterAndExpand"
            HorizontalOptions="EndAndExpand" />
                     </Grid>
                     <Border BackgroundColor="#3b3b54" 
@@ -175,7 +183,7 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="64" />
-                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
@@ -185,17 +193,20 @@
            Aspect="Center" 
            IsVisible="True"                             
            HorizontalOptions="StartAndExpand" 
-           VerticalOptions="EndAndExpand"
+           VerticalOptions="CenterAndExpand"
            Opacity="0.5"
            Margin="5,0,0,0" />
                         <Label Grid.Row="0"  
            Grid.Column="1"  
                                Opacity="0.8"
+                                VerticalTextAlignment="Center"
            Text="Wind" />
                         <Label Margin="0,0,15,0" 
+                               
            Grid.Row="0"  
            Grid.Column="2"  
            Text="{Binding Wind}" 
+                               VerticalOptions="CenterAndExpand"
            HorizontalOptions="EndAndExpand" />
                     </Grid>
                     <Border BackgroundColor="#3b3b54" 
@@ -211,7 +222,7 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="64" />
-                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
@@ -221,18 +232,20 @@
            Aspect="Center" 
            IsVisible="True"                             
            HorizontalOptions="StartAndExpand" 
-           VerticalOptions="EndAndExpand"
+           VerticalOptions="CenterAndExpand"
            Opacity="0.5"
            Margin="5,0,0,0" />
                         <Label Grid.Row="0"  
            Grid.Column="1"  
                                Opacity="0.8"
+                               VerticalOptions="CenterAndExpand"
            Text="Humidity" />
                         <Label Margin="0,0,15,0" 
            Grid.Row="0"  
            Grid.Column="2"  
            Text="{Binding Humidity}" 
-           HorizontalOptions="EndAndExpand" />
+           HorizontalOptions="EndAndExpand" 
+                               VerticalOptions="CenterAndExpand"/>
                     </Grid>
                     <Border BackgroundColor="#3b3b54" 
         StrokeThickness="0.5" 
@@ -245,8 +258,8 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="64" />
-                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="68" />
+                            <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
@@ -256,18 +269,21 @@
             Aspect="Center" 
             IsVisible="True"                             
             HorizontalOptions="StartAndExpand" 
-            VerticalOptions="EndAndExpand"
+           VerticalOptions="CenterAndExpand"
             Opacity="0.5"
             Margin="5,0,0,0" />
                         <Label  Grid.Row="0"  
             Grid.Column="1"  
+                                VerticalTextAlignment="Center"
                                 Opacity="0.8"
+                                VerticalOptions="CenterAndExpand"
             Text="Uv Index" />
                         <Label  Margin="0,0,15,0" 
             Grid.Row="0"  
             Grid.Column="2"  
             Text="{Binding UvIndex}" 
-            HorizontalOptions="EndAndExpand" />
+            HorizontalOptions="EndAndExpand" 
+                                VerticalOptions="CenterAndExpand"/>
                     </Grid>
                     <Border BackgroundColor="#3b3b54" 
         StrokeThickness="0.5" 
@@ -277,5 +293,8 @@
                 </VerticalStackLayout>
              </ScrollView>
         </Border>
+        <Button 
+            VerticalOptions="EndAndExpand" IsEnabled="{Binding ConnectionStatus}" Text="5-day weather forecast"  Margin="0,10,0,0"
+               Command="{Binding BindingContext.DailyForecast5DaysCommand, Source={x:Reference homePage}}"></Button>
     </VerticalStackLayout>
 </ContentPage>

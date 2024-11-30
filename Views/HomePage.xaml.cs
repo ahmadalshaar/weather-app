@@ -5,9 +5,9 @@ namespace weather_app.Views;
 
 public partial class HomePage : ContentPage
 {	
-    public HomePage(IWeatherDataService weatherService)
+    public HomePage(IWeatherDataService weatherService,ILocationService locationService, IConnectivityService connectivityService, IToastMessageService toastMessageService)
     {
         InitializeComponent();
-        BindingContext = new HomePageViewModel(weatherService);
+        BindingContext = new HomePageViewModel(weatherService, locationService, connectivityService,toastMessageService);
     }
 }
